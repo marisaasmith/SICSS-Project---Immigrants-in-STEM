@@ -17,5 +17,5 @@
 * Census data collected from the [U.S. Census](https://www.census.gov/) and [U.S. Bureau of Labor       Statistics](https://www.bls.gov/) at five year intervals (i.e., 2005, 2010, 2015, 2020)
 
 * News data collected from [MediaCloud](https://mediacloud.org/). 
-    + **Boolean search terms:** (immigrant* OR immigrat* OR "immigration policy") AND (F-1 visa* OR H-1B visa* OR J-1 visa* OR "green card") AND (science OR STEM OR "medical school" OR technology OR math* OR engineering OR chemistry OR physics)
+    + **Boolean search terms:** (immigrant* OR immigrat* OR "immigration policy") AND (F-1 visa* OR H-1B visa* OR J-1 visa* OR "green card") AND (science OR "STEM" OR "medical school" OR technology OR math* OR engineering OR chemistry OR physics)
   
