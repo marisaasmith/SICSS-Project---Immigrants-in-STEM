@@ -10,10 +10,13 @@ pacman::p_load(
   purrr, 
   dplyr, 
   tm, 
-  RCurl
+  RCurl,
+  httr, 
+  R.utils
 )
 
 news_data <- read_csv(getURL("https://raw.githubusercontent.com/marisaasmith/SICSS-Project---Immigrants-in-STEM/main/news_data/STEM%20stories%20-%202015.csv"))
+
 
 scrape <- function(x){
   text <- tryCatch(read_html(x) %>%
@@ -24,10 +27,13 @@ scrape <- function(x){
   return(text)
 }
 
+scrape_wrapper <- function(x){
+  withTimeout(expr = scrape(x), timeout = 60) 
+}
 
 
 news_data_2015 <- news_data %>%
-  mutate(text_raw = map(url, scrape) %>%
+  mutate(text_raw = map(url, scrape_wrapper) %>%
            map_chr(1L))
 
 
