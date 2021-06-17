@@ -32,8 +32,8 @@ scrape_wrapper <- function(x){
 }
 
 
-news_data_2015 <- news_data %>%
+news_data_2015 <- news_data[5:10,] %>%
   mutate(text_raw = map(url, scrape_wrapper) %>%
            map_chr(1L))
 
-
+saveRDS(news_data_2015, "news_data_2015.rds")   
